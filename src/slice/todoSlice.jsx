@@ -2,21 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let todoSlice = createSlice({
   name: "todo",
-  initialState: [],
+  initialState: {value:[]},
   reducers: {
     addTodo(state, action) {
-      state.push(action.payload);
+      state.value.push(action.payload);
     },
     editTodo(state, action) {
       console.log("action here", action);
-      state.map((item) => {
+      state.value.map((item) => {
         if (item.id === action.payload.id) {
           item.name = action.payload.name;
         }
       });
     },
     removeTodo(state, action) {
-      return state.filter((item) => item.id !== action.payload.id);
+     state.value= state.value.filter((item) => item.id !== action.payload.id);
     },
   },
 });

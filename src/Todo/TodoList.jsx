@@ -5,7 +5,7 @@ import todoSlice from "../slice/todoSlice";
 // import { addTodoAction } from "../actions/todo.actions";
 
 const TodoList = () => {
-  const allTodo = useSelector((store) => store.todo);
+  const allTodo = useSelector((store) => store.todo.value);
   const dispatch = useDispatch();
   console.log(allTodo);
   const [todoText, setTodoText] = useState("");
